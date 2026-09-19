@@ -1,900 +1,1055 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Database Services | Latest Database</title>
-
-  <meta name="description" content="Professional database services including B2B and B2C email lists, phone number lists, targeted leads and custom data solutions.">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-      color: #222;
-      background: #f7f9fc;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    /* Header */
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e8e8e8;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
-      color: #1266f1;
-    }
-
-    .logo span {
-      color: #222;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
-
-    nav ul li a {
-      color: #222;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #1266f1;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 570px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #eaf3ff, #ffffff);
-    }
-
-    .hero-content {
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      line-height: 1.2;
-      margin-bottom: 25px;
-      color: #111827;
-    }
-
-    .hero h1 span {
-      color: #1266f1;
-    }
-
-    .hero p {
-      max-width: 760px;
-      margin: auto;
-      font-size: 18px;
-      color: #555;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 28px;
-      background: #1266f1;
-      color: #fff;
-      border-radius: 7px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #084db5;
-      transform: translateY(-2px);
-    }
-
-    /* General */
-    section {
-      padding: 80px 20px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-title h2 {
-      font-size: 36px;
-      color: #111827;
-      margin-bottom: 12px;
-    }
-
-    .section-title p {
-      color: #666;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    /* About */
-    .about {
-      background: #ffffff;
-    }
-
-    .about-content {
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .about-content h3 {
-      font-size: 27px;
-      margin-bottom: 20px;
-      color: #1266f1;
-    }
-
-    .about-content p {
-      margin-bottom: 18px;
-      color: #555;
-      font-size: 17px;
-    }
-
-    /* Services */
-    .services {
-      background: #f7f9fc;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .service-card {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      border: 1px solid #e8edf5;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.04);
-      transition: 0.3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-    }
-
-    .service-icon {
-      font-size: 38px;
-      margin-bottom: 15px;
-    }
-
-    .service-card h3 {
-      margin-bottom: 12px;
-      font-size: 21px;
-    }
-
-    .service-card p {
-      color: #666;
-    }
-
-    /* Images */
-    .gallery {
-      background: #fff;
-    }
-
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .image-box {
-      overflow: hidden;
-      border-radius: 12px;
-      background: #eee;
-    }
-
-    .image-box img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      display: block;
-      transition: 0.4s;
-    }
-
-    .image-box img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Pricing */
-    .pricing {
-      background: #f7f9fc;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      max-width: 1050px;
-      margin: auto;
-    }
-
-    .price-card {
-      background: #fff;
-      padding: 35px 25px;
-      text-align: center;
-      border-radius: 12px;
-      border: 1px solid #e3e8f0;
-    }
-
-    .price-card.featured {
-      border: 2px solid #1266f1;
-      transform: translateY(-8px);
-    }
-
-    .price-card h3 {
-      font-size: 23px;
-      margin-bottom: 15px;
-    }
-
-    .price {
-      font-size: 35px;
-      font-weight: bold;
-      color: #1266f1;
-      margin-bottom: 20px;
-    }
-
-    .price-card ul {
-      list-style: none;
-      margin-bottom: 20px;
-    }
-
-    .price-card li {
-      padding: 7px 0;
-      color: #555;
-    }
-
-    /* Contact */
-    .contact {
-      background: #ffffff;
-    }
-
-    .contact-box {
-      max-width: 850px;
-      margin: auto;
-      background: #f7f9fc;
-      padding: 40px;
-      border-radius: 15px;
-      border: 1px solid #e4e9f1;
-    }
-
-    .contact-box h3 {
-      color: #1266f1;
-      font-size: 27px;
-      margin-bottom: 20px;
-    }
-
-    .contact-box p {
-      margin: 10px 0;
-      color: #444;
-    }
-
-    .contact-box strong {
-      color: #222;
-    }
-
-    .contact-box a {
-      color: #1266f1;
-    }
-
-    /* CTA */
-    .cta {
-      background: #1266f1;
-      color: #fff;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      max-width: 750px;
-      margin: auto;
-      opacity: 0.95;
-    }
-
-    .cta .btn {
-      background: #fff;
-      color: #1266f1;
-    }
-
-    /* Footer */
-    footer {
-      background: #111827;
-      color: #fff;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    footer p {
-      margin: 7px 0;
-      color: #d1d5db;
-    }
-
-    footer a {
-      color: #61a5ff;
-      font-weight: bold;
-    }
-
-    /* WhatsApp */
-    .whatsapp {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      width: 58px;
-      height: 58px;
-      background: #25D366;
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 29px;
-      z-index: 1000;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.25);
-      transition: 0.3s;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.1);
-    }
-
-    /* Mobile */
-    @media (max-width: 900px) {
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .image-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .pricing-grid {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-      }
-
-      .price-card.featured {
-        transform: none;
-      }
-    }
-
-    @media (max-width: 650px) {
-
-      .navbar {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      nav ul {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      nav ul li a {
-        font-size: 14px;
-      }
-
-      .hero {
-        min-height: 500px;
-        padding: 60px 20px;
-      }
-
-      .hero h1 {
-        font-size: 31px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 60px 15px;
-      }
-
-      .section-title h2 {
-        font-size: 29px;
-      }
-
-      .service-grid,
-      .image-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .image-box img {
-        height: 240px;
-      }
-
-      .contact-box {
-        padding: 25px 20px;
-      }
-
-      .cta h2 {
-        font-size: 28px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Business Database Services | Latest Database</title>
+
+<meta name="description" content="B2B and B2C email lists, phone number lists, targeted leads and custom database services for businesses.">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.7;
+  color:#222;
+  background:#f6f8fb;
+}
+
+a{
+  text-decoration:none;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+}
+
+section{
+  padding:80px 0;
+}
+
+/* HEADER */
+header{
+  background:#fff;
+  border-bottom:1px solid #e5e7eb;
+  position:sticky;
+  top:0;
+  z-index:999;
+}
+
+.navbar{
+  max-width:1200px;
+  margin:auto;
+  padding:17px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:bold;
+  color:#1266f1;
+}
+
+.logo span{
+  color:#222;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:24px;
+}
+
+nav ul li a{
+  color:#222;
+  font-weight:600;
+}
+
+nav ul li a:hover{
+  color:#1266f1;
+}
+
+/* HOME */
+.hero{
+  min-height:580px;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(135deg,#eaf3ff,#ffffff);
+}
+
+.hero-content{
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+.hero h1{
+  font-size:50px;
+  line-height:1.2;
+  color:#111827;
+  margin-bottom:25px;
+}
+
+.hero h1 span{
+  color:#1266f1;
+}
+
+.hero p{
+  max-width:800px;
+  margin:auto;
+  font-size:18px;
+  color:#555;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:28px;
+  padding:14px 28px;
+  background:#1266f1;
+  color:#fff;
+  border-radius:7px;
+  font-weight:bold;
+}
+
+.btn:hover{
+  background:#084db5;
+}
+
+/* SECTION TITLE */
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.section-title h2{
+  font-size:38px;
+  color:#111827;
+  margin-bottom:12px;
+}
+
+.section-title p{
+  max-width:750px;
+  margin:auto;
+  color:#666;
+}
+
+/* ABOUT */
+.about{
+  background:#fff;
+}
+
+.about-content{
+  max-width:1000px;
+  margin:auto;
+}
+
+.about-content h3{
+  font-size:29px;
+  color:#1266f1;
+  margin-bottom:22px;
+}
+
+.about-content p{
+  font-size:17px;
+  color:#555;
+  margin-bottom:20px;
+}
+
+/* SERVICES */
+.services{
+  background:#f6f8fb;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.service-card{
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  border:1px solid #e4e9f1;
+  box-shadow:0 5px 20px rgba(0,0,0,.04);
+  transition:.3s;
+}
+
+.service-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.service-icon{
+  font-size:38px;
+  margin-bottom:12px;
+}
+
+.service-card h3{
+  font-size:21px;
+  margin-bottom:12px;
+}
+
+.service-card h3 a{
+  color:#222;
+}
+
+.service-card h3 a:hover{
+  color:#1266f1;
+}
+
+.service-card p{
+  color:#666;
+}
+
+.service-link{
+  display:inline-block;
+  margin-top:15px;
+  color:#1266f1;
+  font-weight:bold;
+}
+
+/* IMAGES */
+.gallery{
+  background:#fff;
+}
+
+.image-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.image-box{
+  overflow:hidden;
+  border-radius:12px;
+}
+
+.image-box img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  display:block;
+  transition:.4s;
+}
+
+.image-box img:hover{
+  transform:scale(1.05);
+}
+
+/* PRICING */
+.pricing{
+  background:#f6f8fb;
+}
+
+.pricing-grid{
+  max-width:1050px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.price-card{
+  background:#fff;
+  padding:35px 25px;
+  text-align:center;
+  border-radius:12px;
+  border:1px solid #e1e6ed;
+}
+
+.price-card.featured{
+  border:2px solid #1266f1;
+  transform:translateY(-7px);
+}
+
+.price-card h3{
+  font-size:24px;
+  margin-bottom:15px;
+}
+
+.price{
+  font-size:34px;
+  font-weight:bold;
+  color:#1266f1;
+  margin-bottom:20px;
+}
+
+.price-card ul{
+  list-style:none;
+  margin-bottom:15px;
+}
+
+.price-card li{
+  padding:6px 0;
+  color:#555;
+}
+
+/* CONTACT */
+.contact{
+  background:#fff;
+}
+
+.contact-box{
+  max-width:850px;
+  margin:auto;
+  padding:40px;
+  background:#f6f8fb;
+  border:1px solid #e2e7ee;
+  border-radius:15px;
+}
+
+.contact-box h3{
+  color:#1266f1;
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+.contact-box p{
+  margin:10px 0;
+  color:#444;
+}
+
+.contact-box a{
+  color:#1266f1;
+}
+
+/* CTA */
+.cta{
+  background:#1266f1;
+  color:#fff;
+  text-align:center;
+}
+
+.cta h2{
+  font-size:36px;
+  margin-bottom:15px;
+}
+
+.cta p{
+  max-width:750px;
+  margin:auto;
+}
+
+.cta .btn{
+  background:#fff;
+  color:#1266f1;
+}
+
+/* FOOTER */
+footer{
+  background:#111827;
+  color:#fff;
+  text-align:center;
+  padding:30px 20px;
+}
+
+footer p{
+  color:#d1d5db;
+  margin:5px 0;
+}
+
+footer a{
+  color:#60a5fa;
+  font-weight:bold;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:28px;
+  z-index:1000;
+  box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+
+.whatsapp:hover{
+  transform:scale(1.1);
+}
+
+/* TABLET */
+@media(max-width:900px){
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .service-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .image-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .pricing-grid{
+    grid-template-columns:1fr;
+    max-width:500px;
+  }
+
+  .price-card.featured{
+    transform:none;
+  }
+}
+
+/* MOBILE */
+@media(max-width:650px){
+
+  .navbar{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  nav ul{
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  nav ul li a{
+    font-size:13px;
+  }
+
+  section{
+    padding:60px 0;
+  }
+
+  .hero{
+    min-height:500px;
+  }
+
+  .hero h1{
+    font-size:31px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .section-title h2{
+    font-size:30px;
+  }
+
+  .service-grid,
+  .image-grid{
+    grid-template-columns:1fr;
+  }
+
+  .image-box img{
+    height:250px;
+  }
+
+  .contact-box{
+    padding:25px 20px;
+  }
+
+  .cta h2{
+    font-size:29px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="navbar">
+<!-- ================= HEADER / MENU ================= -->
 
-      <div class="logo">
-        Latest<span>Database</span>
-      </div>
+<header>
+<div class="navbar">
 
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#gallery">Images</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+  <div class="logo">
+    Latest<span>Database</span>
+  </div>
 
-    </div>
-  </header>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#gallery">Images</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
+</div>
+</header>
 
-  <!-- Home -->
-  <section class="hero" id="home">
 
-    <div class="hero-content">
+<!-- ================= HOME ================= -->
 
-      <h1>
-        Professional <span>Database Services</span>
-        for Modern Businesses
-      </h1>
+<section class="hero" id="home">
 
-      <p>
-        Discover business-focused data solutions including B2B and B2C
-        email lists, phone number lists, targeted leads and custom
-        database services designed for marketing and sales activities.
-      </p>
+<div class="hero-content">
 
-      <a href="#services" class="btn">
-        Explore Services
-      </a>
+  <h1>
+    Professional <span>Database Services</span>
+    for Modern Businesses
+  </h1>
 
-    </div>
+  <p>
+    Explore B2B and B2C email lists, phone number lists,
+    targeted leads and custom database solutions designed
+    to support business marketing, sales and research.
+  </p>
 
-  </section>
-
-
-  <!-- About Us -->
-  <section class="about" id="about">
-
-    <div class="container">
-
-      <div class="section-title">
-        <h2>About Us</h2>
-        <p>
-          Learn more about our database-focused services and solutions.
-        </p>
-      </div>
-
-      <div class="about-content">
-
-        <h3>Building Better Data Solutions for Businesses</h3>
-
-        <p>
-          Businesses today depend on accurate and organized information
-          to understand markets, identify potential customers and build
-          meaningful business connections. Our database services are
-          designed to support organizations that require structured
-          business and consumer contact information for their research,
-          marketing and sales activities.
-        </p>
-
-        <p>
-          We provide different types of database solutions, including
-          B2B and B2C email lists, phone number databases, targeted
-          business leads and customized data services. Our approach
-          focuses on helping businesses organize their prospecting
-          requirements according to industry, location, business type
-          and other relevant criteria.
-        </p>
-
-        <p>
-          Data requirements can vary significantly from one business to
-          another. For this reason, database services can be adapted to
-          different marketing campaigns, lead-generation projects,
-          market research activities and business development needs.
-        </p>
-
-        <p>
-          Our goal is to make database sourcing simpler and more
-          convenient for businesses looking for structured information
-          to support their digital marketing and sales workflows.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- Services -->
-  <section class="services" id="services">
-
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Our Services</h2>
-        <p>
-          Explore our range of database and lead generation solutions.
-        </p>
-      </div>
-
-      <div class="service-grid">
-
-        <div class="service-card">
-          <div class="service-icon">📧</div>
-          <h3>B2B Email Lists</h3>
-          <p>
-            Business email data designed to support B2B marketing,
-            sales prospecting and business research.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">📱</div>
-          <h3>Phone Number Lists</h3>
-          <p>
-            Structured phone contact databases for business outreach,
-            research and lead generation campaigns.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🎯</div>
-          <h3>Targeted Leads</h3>
-          <p>
-            Target-focused lead data organized around specific
-            industries, audiences and business requirements.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🏢</div>
-          <h3>Business Database</h3>
-          <p>
-            Business-oriented contact information to help organizations
-            research companies and potential prospects.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">👥</div>
-          <h3>B2C Data</h3>
-          <p>
-            Consumer-oriented data solutions for businesses working
-            with audience research and marketing campaigns.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">⚙️</div>
-          <h3>Custom Database</h3>
-          <p>
-            Customized database solutions based on selected
-            requirements, markets, industries and audience segments.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- Images -->
-  <section class="gallery" id="gallery">
-
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Database Solutions</h2>
-        <p>
-          Visual overview of business data, analytics and lead generation.
-        </p>
-      </div>
-
-      <div class="image-grid">
-
-        <div class="image-box">
-          <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80"
-            alt="Business data analytics dashboard">
-        </div>
-
-        <div class="image-box">
-          <img
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
-            alt="Business database analytics">
-        </div>
-
-        <div class="image-box">
-          <img
-            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80"
-            alt="Business team working with data">
-        </div>
-
-        <div class="image-box">
-          <img
-            src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80"
-            alt="Digital business data research">
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- Pricing -->
-  <section class="pricing" id="pricing">
-
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Pricing</h2>
-        <p>
-          Choose a database service package according to your requirements.
-        </p>
-      </div>
-
-      <div class="pricing-grid">
-
-        <div class="price-card">
-
-          <h3>Starter</h3>
-
-          <div class="price">
-            Custom
-          </div>
-
-          <ul>
-            <li>✔ Basic Database</li>
-            <li>✔ Email Data</li>
-            <li>✔ Business Contacts</li>
-            <li>✔ Standard Support</li>
-          </ul>
-
-          <a href="#contact" class="btn">
-            Contact Us
-          </a>
-
-        </div>
-
-
-        <div class="price-card featured">
-
-          <h3>Business</h3>
-
-          <div class="price">
-            Custom
-          </div>
-
-          <ul>
-            <li>✔ Targeted Database</li>
-            <li>✔ B2B & B2C Data</li>
-            <li>✔ Phone & Email Data</li>
-            <li>✔ Priority Support</li>
-          </ul>
-
-          <a href="#contact" class="btn">
-            Contact Us
-          </a>
-
-        </div>
-
-
-        <div class="price-card">
-
-          <h3>Custom</h3>
-
-          <div class="price">
-            Quote
-          </div>
-
-          <ul>
-            <li>✔ Custom Data Requirements</li>
-            <li>✔ Specific Industries</li>
-            <li>✔ Selected Markets</li>
-            <li>✔ Dedicated Support</li>
-          </ul>
-
-          <a href="#contact" class="btn">
-            Request Quote
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- Contact Information -->
-  <section class="contact" id="contact">
-
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Contact Information</h2>
-        <p>
-          Get in touch with our team for database and business data requirements.
-        </p>
-      </div>
-
-      <div class="contact-box">
-
-        <h3>Head Office</h3>
-
-        <p>
-          <strong>Latest Database</strong>
-        </p>
-
-        <p>
-          🏢 Manila, Philippines
-        </p>
-
-        <p>
-          📞 <strong>Phone:</strong>
-          <a href="tel:+639858085805">
-            +63985 808 5805
-          </a>
-        </p>
-
-        <p>
-          📧 <strong>General Inquiries:</strong>
-          <a href="mailto:info@latestdatabase.com">
-            info@latestdatabase.com
-          </a>
-        </p>
-
-        <p>
-          📧 <strong>Customer Support:</strong>
-          <a href="mailto:support@latestdatabase.com">
-            support@latestdatabase.com
-          </a>
-        </p>
-
-        <p>
-          📧 <strong>Data Protection Officer:</strong>
-          <a href="mailto:privacy@latestdatabase.com">
-            privacy@latestdatabase.com
-          </a>
-        </p>
-
-        <p>
-          📧 <strong>Legal Department:</strong>
-          <a href="mailto:legal@latestdatabase.com">
-            legal@latestdatabase.com
-          </a>
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CTA -->
-  <section class="cta">
-
-    <div class="container">
-
-      <h2>Looking for Business Data?</h2>
-
-      <p>
-        Explore database solutions for email marketing, lead generation,
-        business research and targeted campaigns.
-      </p>
-
-      <a
-        href="https://www.latestdatabase.com/"
-        target="_blank"
-        rel="noopener"
-        class="btn">
-        Visit Latest Database
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- Footer -->
-  <footer>
-
-    <p>
-      © 2026 Latest Database. All Rights Reserved.
-    </p>
-
-    <p>
-      Visit:
-      <a
-        href="https://www.latestdatabase.com/"
-        target="_blank"
-        rel="noopener">
-        Latest Database
-      </a>
-    </p>
-
-  </footer>
-
-
-  <!-- WhatsApp Floating Button -->
-  <a
-    class="whatsapp"
-    href="https://wa.me/639858085805"
-    target="_blank"
-    rel="noopener"
-    aria-label="Chat on WhatsApp">
-    ☎
+  <a href="#services" class="btn">
+    Explore Services
   </a>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT US ================= -->
+
+<section class="about" id="about">
+
+<div class="container">
+
+<div class="section-title">
+  <h2>About Us</h2>
+  <p>
+    Learn more about our database-focused services and solutions.
+  </p>
+</div>
+
+<div class="about-content">
+
+<h3>
+  Professional Data Solutions for Business Growth
+</h3>
+
+<p>
+  Businesses need organized information to understand markets,
+  identify potential customers and develop new business opportunities.
+  Our database-focused services provide businesses with structured
+  data solutions for marketing, sales, research and lead generation.
+</p>
+
+<p>
+  We provide different database solutions including B2B and B2C
+  email lists, phone number databases, targeted business leads
+  and customized data services. These solutions can be used by
+  companies, marketers, sales professionals, agencies and researchers
+  looking for organized business and consumer information.
+</p>
+
+<p>
+  Every business has different data requirements. Some organizations
+  may need industry-specific information, while others may require
+  location-based contacts, business leads or audience-focused data.
+  Our service structure is designed to support a variety of database
+  requirements and business research projects.
+</p>
+
+<p>
+  Our objective is to make business data sourcing more convenient
+  while helping organizations create better workflows for prospect
+  research, marketing planning, sales outreach and business development.
+</p>
+
+<p>
+  For more information about database solutions and available services,
+  visit the official
+  <a href="https://www.latestdatabase.com/"
+     target="_blank"
+     rel="noopener">
+     Latest Database
+  </a>
+  website.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-title">
+
+  <h2>Our Services</h2>
+
+  <p>
+    Explore our six database and lead generation services.
+  </p>
+
+</div>
+
+<div class="service-grid">
+
+
+<!-- SERVICE 1 -->
+
+<div class="service-card">
+
+<div class="service-icon">📧</div>
+
+<h3>
+<a href="https://www.latestdatabase.com/"
+   target="_blank"
+   rel="noopener">
+B2B Email Lists
+</a>
+</h3>
+
+<p>
+Business email data designed for B2B marketing,
+sales prospecting, business research and lead generation.
+</p>
+
+<a class="service-link"
+   href="https://www.latestdatabase.com/"
+   target="_blank"
+   rel="noopener">
+Visit Latest Database →
+</a>
+
+</div>
+
+
+<!-- SERVICE 2 -->
+
+<div class="service-card">
+
+<div class="service-icon">📱</div>
+
+<h3>
+<a href="https://www.latestdatabase.com/"
+   target="_blank"
+   rel="noopener">
+Phone Number Lists
+</a>
+</h3>
+
+<p>
+Structured phone contact data for business outreach,
+market research and lead generation activities.
+</p>
+
+<a class="service-link"
+   href="https://www.latestdatabase.com/"
+   target="_blank"
+   rel="noopener">
+Visit Latest Database →
+</a>
+
+</div>
+
+
+<!-- SERVICE 3 -->
+
+<div class="service-card">
+
+<div class="service-icon">🎯</div>
+
+<h3>
+<a href="https://www.latestdatabase.com/"
+   target="_blank"
+   rel="noopener">
+Targeted Leads
+</a>
+</h3>
+
+<p>
+Target-focused lead solutions organized around
+specific industries, markets and audience requirements.
+</p>
+
+<a class="service-link"
+   href="https://www.latestdatabase.com/"
+   target="_blank"
+   rel="noopener">
+Visit Latest Database →
+</a>
+
+</div>
+
+
+<!-- SERVICE 4 -->
+
+<div class="service-card">
+
+<div class="service-icon">🏢</div>
+
+<h3>
+<a href="https://www.latestdatabase.com/"
+   target="_blank"
+   rel="noopener">
+Business Database
+</a>
+</h3>
+
+<p>
+Business-oriented database solutions for company research,
+prospecting and business development activities.
+</p>
+
+<a class="service-link"
+   href="https://www.latestdatabase.com/"
+   target="_blank"
+   rel="noopener">
+Visit Latest Database →
+</a>
+
+</div>
+
+
+<!-- SERVICE 5 -->
+
+<div class="service-card">
+
+<div class="service-icon">👥</div>
+
+<h3>
+<a href="https://www.latestdatabase.com/"
+   target="_blank"
+   rel="noopener">
+B2C Data
+</a>
+</h3>
+
+<p>
+Consumer-focused data solutions for audience research,
+marketing planning and customer-oriented campaigns.
+</p>
+
+<a class="service-link"
+   href="https://www.latestdatabase.com/"
+   target="_blank"
+   rel="noopener">
+Visit Latest Database →
+</a>
+
+</div>
+
+
+<!-- SERVICE 6 -->
+
+<div class="service-card">
+
+<div class="service-icon">⚙️</div>
+
+<h3>
+<a href="https://www.latestdatabase.com/"
+   target="_blank"
+   rel="noopener">
+Custom Database
+</a>
+</h3>
+
+<p>
+Customized database solutions based on selected markets,
+industries, locations and specific business requirements.
+</p>
+
+<a class="service-link"
+   href="https://www.latestdatabase.com/"
+   target="_blank"
+   rel="noopener">
+Visit Latest Database →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= 4 IMAGES ================= -->
+
+<section class="gallery" id="gallery">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Database Solutions</h2>
+
+<p>
+Business data, analytics and database-related visual resources.
+</p>
+
+</div>
+
+<div class="image-grid">
+
+<div class="image-box">
+<img
+src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80"
+alt="Business data analytics dashboard">
+</div>
+
+<div class="image-box">
+<img
+src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
+alt="Business database analytics">
+</div>
+
+<div class="image-box">
+<img
+src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80"
+alt="Business team working with data">
+</div>
+
+<div class="image-box">
+<img
+src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80"
+alt="Digital business data research">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PRICING ================= -->
+
+<section class="pricing" id="pricing">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Pricing</h2>
+
+<p>
+Choose a database service option according to your business requirements.
+</p>
+
+</div>
+
+<div class="pricing-grid">
+
+
+<div class="price-card">
+
+<h3>Starter</h3>
+
+<div class="price">Custom</div>
+
+<ul>
+<li>✔ Basic Database</li>
+<li>✔ Email Data</li>
+<li>✔ Business Contacts</li>
+<li>✔ Standard Support</li>
+</ul>
+
+<a href="#contact" class="btn">
+Contact Us
+</a>
+
+</div>
+
+
+<div class="price-card featured">
+
+<h3>Business</h3>
+
+<div class="price">Custom</div>
+
+<ul>
+<li>✔ Targeted Database</li>
+<li>✔ B2B &amp; B2C Data</li>
+<li>✔ Phone &amp; Email Data</li>
+<li>✔ Priority Support</li>
+</ul>
+
+<a href="#contact" class="btn">
+Contact Us
+</a>
+
+</div>
+
+
+<div class="price-card">
+
+<h3>Custom</h3>
+
+<div class="price">Quote</div>
+
+<ul>
+<li>✔ Custom Data Requirements</li>
+<li>✔ Specific Industries</li>
+<li>✔ Selected Markets</li>
+<li>✔ Dedicated Support</li>
+</ul>
+
+<a href="#contact" class="btn">
+Request Quote
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT INFORMATION ================= -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Contact Information</h2>
+
+<p>
+Get in touch with our team for database and business data requirements.
+</p>
+
+</div>
+
+<div class="contact-box">
+
+<h3>Head Office</h3>
+
+<p>
+<strong>Latest Database</strong>
+</p>
+
+<p>
+🏢 Manila, Philippines
+</p>
+
+<p>
+📞 <strong>Phone:</strong>
+<a href="tel:+639858085805">
++63985 808 5805
+</a>
+</p>
+
+<p>
+📧 <strong>General Inquiries:</strong>
+<a href="mailto:info@latestdatabase.com">
+info@latestdatabase.com
+</a>
+</p>
+
+<p>
+📧 <strong>Customer Support:</strong>
+<a href="mailto:support@latestdatabase.com">
+support@latestdatabase.com
+</a>
+</p>
+
+<p>
+📧 <strong>Data Protection Officer:</strong>
+<a href="mailto:privacy@latestdatabase.com">
+privacy@latestdatabase.com
+</a>
+</p>
+
+<p>
+📧 <strong>Legal Department:</strong>
+<a href="mailto:legal@latestdatabase.com">
+legal@latestdatabase.com
+</a>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA / BACKLINK ================= -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>Looking for Business Data?</h2>
+
+<p>
+Explore database services for email marketing,
+lead generation, business research and targeted campaigns.
+</p>
+
+<a
+href="https://www.latestdatabase.com/"
+target="_blank"
+rel="noopener"
+class="btn">
+Visit Latest Database
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+© 2026 Latest Database. All Rights Reserved.
+</p>
+
+<p>
+<a
+href="https://www.latestdatabase.com/"
+target="_blank"
+rel="noopener">
+Latest Database
+</a>
+</p>
+
+</footer>
+
+
+<!-- ================= WHATSAPP FLOATING BUTTON ================= -->
+
+<a
+class="whatsapp"
+href="https://wa.me/639858085805"
+target="_blank"
+rel="noopener"
+aria-label="Chat on WhatsApp">
+💬
+</a>
 
 </body>
 </html>
+```
